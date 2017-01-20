@@ -1,0 +1,16 @@
+{
+	"pictures": [{
+		"url": "https://image.shutterstock.com/z/stock-photo-landscapes-on-denali-highway-alaska-instagram-filter-309705941.jpg",
+		"caption": "photo1"
+	}, {
+		"url": "https://image.shutterstock.com/z/stock-photo-hike-on-garibaldi-lake-near-whistler-bc-canada-471531449.jpg",
+		"caption": "photo2"
+	}, {
+		"url": "https://image.shutterstock.com/z/stock-photo-hike-in-the-utah-mountains-524993239.jpg",
+		"caption": "photo3"
+	}, {
+		"url": "https://image.shutterstock.com/z/stock-photo-dolomites-landscape-313599062.jpg",
+		"caption": "photo4"
+	}]
+}
+

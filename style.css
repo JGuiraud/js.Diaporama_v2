@@ -1,0 +1,13 @@
+html, body {
+    padding-left: -20;
+}
+
+#images {
+    padding-left: -20px;
+    width: 100%
+}
+
+h1 {
+    color: pink;
+    text-align: center;
+}
