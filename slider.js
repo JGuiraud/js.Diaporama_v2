@@ -1,8 +1,7 @@
 $(document).ready(function(){
 
 $.getJSON("slide.json",  function(data) {
-    var i;
-    var counter;
+    var i, counter, diaporama1;
     var pic = data.pictures;
     var Diaporama = function(caption, url){
         this.caption = caption;
@@ -16,7 +15,7 @@ $.getJSON("slide.json",  function(data) {
         i = 0;
         counter = setInterval(diapo, 4000);
             function diapo(){
-                var diaporama1 = new Diaporama(pic[i].name, pic[i].url);
+                diaporama1 = new Diaporama(pic[i].name, pic[i].url);
                 diaporama1.slideShow();
                 i+=1;
                 if (i === pic.length) {
@@ -26,11 +25,6 @@ $.getJSON("slide.json",  function(data) {
         } 
         diaporama();
 
-        $("#stop").click(function(){
-    clearInterval(counter);
-        })
-        $("#start").click(function(){
-            diaporama();
-        })
+
 });
 });
