@@ -1,39 +1,36 @@
 $(document).ready(function(){
 
 $.getJSON("slide.json",  function(data) {
-
-    var diaporama;
+    var i;
+    var counter;
+    var pic = data.pictures;
     var Diaporama = function(caption, url){
         this.caption = caption;
         this.url = url;
-        this.ajouter = function(){
-            add();
-        }
-    } 
+        this.slideShow = function slider (){
+            $("img").attr('src', pic[i].url).fadeIn(800).delay(2000).fadeOut(900).delay(300); 
+            };
+        };
 
+        function diaporama (){
+        i = 0;
+        counter = setInterval(diapo, 4000);
+            function diapo(){
+                var diaporama1 = new Diaporama(pic[i].name, pic[i].url);
+                diaporama1.slideShow();
+                i+=1;
+                if (i === pic.length) {
+                    i = 0;
+                }
+            };
+        } 
+        diaporama();
 
-    for (var i=0; i=3; i++) {
-    var diaporama = new Diaporama(data.pictures[i].caption, data.pictures[i].url);
-        diaporama.ajouter();
-    }
-
-    function add(){
-        $("img").attr('src',(data.pictures[i].url)).fadeIn(800).delay(2000).fadeOut(900).delay(300); 
-    }
-
+        $("#stop").click(function(){
+    clearInterval(counter);
+        })
+        $("#start").click(function(){
+            diaporama();
+        })
 });
 });
-
-
-        // $.each(data, function bla () {
-        //     setInterval(test,4000)
-        //     var i = -1
-        //         function test(){
-        //             i += 1
-        //                 if(i === 4) {
-        //                     i =0
-        //                 }
-        //             $("img").attr('src',(data.pictures[i].url)).fadeIn(800).delay(2000).fadeOut(900).delay(300);                
-        //         }
-        //     console.log()
-        // });
